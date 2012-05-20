@@ -205,7 +205,8 @@ public abstract class BalloonItemizedOverlay<Item extends OverlayItem> extends I
 			float startX;
 			float startY;
 			
-			public boolean onTouch(View v, MotionEvent event) {
+			@Override
+            public boolean onTouch(View v, MotionEvent event) {
 				
 				View l =  ((View) v.getParent()).findViewById(R.id.balloon_main_layout);
 				Drawable d = l.getBackground();
@@ -339,7 +340,8 @@ public abstract class BalloonItemizedOverlay<Item extends OverlayItem> extends I
 	}
 	
 	private static Runnable finishBalloonInflation = new Runnable() {
-		public void run() {
+		@Override
+        public void run() {
 			isInflating = false;
 		}
 	};
